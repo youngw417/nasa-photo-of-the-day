@@ -1,20 +1,30 @@
 
 import React from "react";
 import PhotoCard from "./PhotoCard";
+import styled from 'styled-components'
 
+const WrapperDiv = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    margin-top: 30px;
+
+
+`;
 
 const PhotoList = (props) => {
 
     return (
-        <div className = "photoMars">
+        <WrapperDiv>
         
         {
             props.nasaData.map( (item, index)  => {
-                if ( index < 15 )
+                console.log(props.num);
+             if ( index < props.num )
                 return <PhotoCard key = {index} myItem = {item} />
             })
         }
-        </div>
+        </WrapperDiv>
 
 
 
